@@ -22,13 +22,13 @@
 <body>
 <main>
 <h1>Privacy policy for drivers</h1>
-<p class="meta"><span class="company">The taxi service</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">Version of 25 November 2026</p>
 <div style="height: 10px"></div>
 <h2>1. What data we collect</h2>
 <p>Full name, phone number, call sign, driving document details, car details (model, colour, plate number), location while working, order history, payments, rating and device details.</p>
 <h2>2. Why we need it</h2>
-<p>To distribute orders, show the car and driver to the client, keep accounts, keep rides safe and improve the work of <span class="company">The taxi service</span>.</p>
+<p>To distribute orders, show the car and driver to the client, keep accounts, keep rides safe and improve the Service.</p>
 <h2>3. Location</h2>
 <p>While the driver is on duty, the app sends the driver&#x27;s location, including when the app is minimised: this is needed to distribute orders and show the car to the client. Off duty, location is not collected.</p>
 <h2>4. Who we share it with</h2>
@@ -41,13 +41,19 @@
 <p>A new version of this policy is published at this same link. Continuing to work in the app means you accept it.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

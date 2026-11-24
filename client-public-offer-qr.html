@@ -22,11 +22,11 @@
 <body>
 <main>
 <h1>Klientler ushın ashıq oferta</h1>
-<p class="meta"><span class="company">Taksi xızmeti</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">2026-jıl 25-noyabrdegi redakciya</p>
 <div style="height: 10px"></div>
 <h2>1. Ulıwma qaǵıydalar</h2>
-<p>Bul ashıq oferta — <span class="company">Taksi xızmeti</span> xızmetiniń (bunnan bılay — Xızmet) taksi shaqırıw ushın mobil qosımshadan paydalanıw shártnamasın dúziw haqqındaǵı usınısı.</p>
+<p>Bul ashıq oferta — <span class="name-before"></span>taksi xızmetiniń (bunnan bılay — Xızmet) taksi shaqırıw ushın mobil qosımshadan paydalanıw shártnamasın dúziw haqqındaǵı usınısı.</p>
 <p>Qosımshanı ornatıw, telefon nomeri arqalı kiriw hám buyırtpa beriw usı shártlerdi tolıq hám shártsiz qabıl etiwdi ańlatadı.</p>
 <h2>2. Shártnama predmeti</h2>
 <p>Xızmet klienttiń buyırtpasın qabıl etedi, onı sherik aydawshıǵa jetkeredi hám klientke mashina menen aydawshı maǵlıwmatların xabarlaydı. Tasıwdı aydawshı orınlaydı.</p>
@@ -49,13 +49,19 @@
 <p>Sorawlar hám shaǵımlar qosımsha menyusindegi qollap-quwatlaw xızmeti arqalı qabıl etiledi.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

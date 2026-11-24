@@ -22,13 +22,13 @@
 <body>
 <main>
 <h1>Mijozlar uchun maxfiylik siyosati</h1>
-<p class="meta"><span class="company">Taksi xizmati</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">2026-yil 25-noyabrdagi tahrir</p>
 <div style="height: 10px"></div>
 <h2>1. Qanday ma&#x27;lumotlarni olamiz</h2>
 <p>Telefon raqami, ism, joylashuv (ilova ochiq turganda), manzillar va buyurtmalar tarixi, haydovchilarga qo&#x27;yilgan baholar hamda qurilma haqidagi ma&#x27;lumotlar: model va ilova versiyasi.</p>
 <h2>2. Ular nima uchun kerak</h2>
-<p>Buyurtmani qabul qilish va bajarish, yaqin atrofdagi mashinalarni ko&#x27;rsatish, mijozni haydovchi bilan bog&#x27;lash, bonuslarni hisoblash, xavfsizlikni ta&#x27;minlash va <span class="company">Taksi xizmati</span> Xizmati ishini yaxshilash uchun.</p>
+<p>Buyurtmani qabul qilish va bajarish, yaqin atrofdagi mashinalarni ko&#x27;rsatish, mijozni haydovchi bilan bog&#x27;lash, bonuslarni hisoblash, xavfsizlikni ta&#x27;minlash va Xizmat ishini yaxshilash uchun.</p>
 <h2>3. Ularni kimga beramiz</h2>
 <p>Buyurtma davomida haydovchiga — ism, aloqa uchun telefon raqami va kutib olish manzili. Davlat organlariga — faqat qonunda nazarda tutilgan hollarda. Ma&#x27;lumotlarni uchinchi shaxslarga sotmaymiz.</p>
 <h2>4. Joylashuv</h2>
@@ -41,13 +41,19 @@
 <p>Siyosatning yangi tahriri shu havolada e&#x27;lon qilinadi. Ilovadan foydalanishni davom ettirish unga roziligingizni bildiradi.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

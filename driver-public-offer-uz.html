@@ -22,11 +22,11 @@
 <body>
 <main>
 <h1>Haydovchilar uchun ommaviy oferta</h1>
-<p class="meta"><span class="company">Taksi xizmati</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">2026-yil 25-noyabrdagi tahrir</p>
 <div style="height: 10px"></div>
 <h2>1. Umumiy qoidalar</h2>
-<p>Ushbu ommaviy oferta — <span class="company">Taksi xizmati</span> xizmatining (keyingi o&#x27;rinlarda — Xizmat) hamkor haydovchiga buyurtmalar olish uchun haydovchi ilovasidan foydalanish haqidagi taklifi.</p>
+<p>Ushbu ommaviy oferta — <span class="name-before"></span>taksi xizmatining (keyingi o&#x27;rinlarda — Xizmat) hamkor haydovchiga buyurtmalar olish uchun haydovchi ilovasidan foydalanish haqidagi taklifi.</p>
 <p>Ilovada ro&#x27;yxatdan o&#x27;tish va liniyaga chiqish ushbu shartlarni to&#x27;liq va so&#x27;zsiz qabul qilishni anglatadi.</p>
 <h2>2. Shartnoma predmeti</h2>
 <p>Xizmat haydovchiga mijozlar buyurtmalariga kirish imkonini beradi. Tashishni haydovchining o&#x27;zi bajaradi va avtomobil, hujjatlar hamda ruxsatnomalar uchun o&#x27;zi javob beradi.</p>
@@ -45,13 +45,19 @@
 <p>Savollarni Xizmatning dispetcherlik xizmati qabul qiladi.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

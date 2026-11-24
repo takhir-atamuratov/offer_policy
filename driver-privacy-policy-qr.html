@@ -22,13 +22,13 @@
 <body>
 <main>
 <h1>Aydawshılar ushın qupıyalılıq siyasatı</h1>
-<p class="meta"><span class="company">Taksi xızmeti</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">2026-jıl 25-noyabrdegi redakciya</p>
 <div style="height: 10px"></div>
 <h2>1. Qanday maǵlıwmatlardı alamız</h2>
 <p>F.A.Á., telefon nomeri, shaqırıw belgisi, aydawshılıq hújjetleri maǵlıwmatları, avtomobil maǵlıwmatları (model, reń, mámleketlik nomer), jumıs waqtındaǵı jaylasıw orını, buyırtpalar tariyxı, tólemler, reyting hám qurılma haqqındaǵı maǵlıwmatlar.</p>
 <h2>2. Olar ne ushın kerek</h2>
-<p>Buyırtpalardı bólistiriw, klientke mashina menen aydawshını kórsetiw, esap-kitaplardı júrgiziw, qáwipsizlikti támiyinlew hám <span class="company">Taksi xızmeti</span> Xızmetiniń jumısın jaqsılaw ushın.</p>
+<p>Buyırtpalardı bólistiriw, klientke mashina menen aydawshını kórsetiw, esap-kitaplardı júrgiziw, qáwipsizlikti támiyinlew hám Xızmettiń jumısın jaqsılaw ushın.</p>
 <h2>3. Jaylasıw orını</h2>
 <p>Aydawshı liniyada bolǵan waqıtta qosımsha onıń jaylasıw orının, sonıń ishinde qosımsha jıynalǵan bolsa da, jiberedi — bul buyırtpalardı bólistiriw hám klientke mashinanı kórsetiw ushın kerek. Liniyadan tıs jaylasıw orını jıynalmaydı.</p>
 <h2>4. Olardı kimge beremiz</h2>
@@ -41,13 +41,19 @@
 <p>Siyasattıń jańa redakciyası usı siltemede járiyalanadı. Qosımshada islewdi dawam etiw oǵan razılıǵıńızdı bildiredi.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

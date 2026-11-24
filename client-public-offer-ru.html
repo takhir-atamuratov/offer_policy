@@ -22,11 +22,11 @@
 <body>
 <main>
 <h1>Публичная оферта для клиентов</h1>
-<p class="meta"><span class="company">Служба такси</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">Редакция от 25 ноября 2026 года</p>
 <div style="height: 10px"></div>
 <h2>1. Общие положения</h2>
-<p>Настоящая публичная оферта — предложение службы <span class="company">Служба такси</span> (далее — Сервис) заключить договор об использовании мобильного приложения для заказа такси.</p>
+<p>Настоящая публичная оферта — предложение службы такси<span class="name-after"></span> (далее — Сервис) заключить договор об использовании мобильного приложения для заказа такси.</p>
 <p>Установка приложения, вход по номеру телефона и оформление заказа означают полное и безоговорочное принятие этих условий.</p>
 <h2>2. Предмет договора</h2>
 <p>Сервис принимает заказ клиента, передаёт его водителю-партнёру и сообщает клиенту данные машины и водителя. Перевозку выполняет водитель.</p>
@@ -49,13 +49,19 @@
 <p>Вопросы и жалобы принимаются через службу поддержки в меню приложения.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

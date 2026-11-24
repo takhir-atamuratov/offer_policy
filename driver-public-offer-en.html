@@ -22,11 +22,11 @@
 <body>
 <main>
 <h1>Public offer for drivers</h1>
-<p class="meta"><span class="company">The taxi service</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">Version of 25 November 2026</p>
 <div style="height: 10px"></div>
 <h2>1. General provisions</h2>
-<p>This public offer is a proposal by <span class="company">The taxi service</span> (the Service) to a partner driver to use the driver app to receive orders.</p>
+<p>This public offer is a proposal by the taxi service<span class="name-after"></span> (the Service) to a partner driver to use the driver app to receive orders.</p>
 <p>Registering in the app and going on duty mean full and unconditional acceptance of these terms.</p>
 <h2>2. Subject of the agreement</h2>
 <p>The Service gives the driver access to clients&#x27; orders. The driver performs the rides personally and is responsible for the car, documents and permits.</p>
@@ -45,13 +45,19 @@
 <p>Questions are handled by the Service&#x27;s dispatch office.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>

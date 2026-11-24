@@ -22,11 +22,11 @@
 <body>
 <main>
 <h1>Public offer for clients</h1>
-<p class="meta"><span class="company">The taxi service</span></p>
+<p class="meta company-line" hidden><span class="company"></span></p>
 <p class="meta">Version of 25 November 2026</p>
 <div style="height: 10px"></div>
 <h2>1. General provisions</h2>
-<p>This public offer is a proposal by <span class="company">The taxi service</span> (the Service) to enter into an agreement on the use of the mobile app for ordering a taxi.</p>
+<p>This public offer is a proposal by the taxi service<span class="name-after"></span> (the Service) to enter into an agreement on the use of the mobile app for ordering a taxi.</p>
 <p>Installing the app, signing in with a phone number and placing an order mean full and unconditional acceptance of these terms.</p>
 <h2>2. Subject of the agreement</h2>
 <p>The Service accepts the client&#x27;s order, passes it to a partner driver and tells the client the car and driver details. The ride itself is performed by the driver.</p>
@@ -49,13 +49,19 @@
 <p>Questions and complaints are accepted through support in the app menu.</p>
 </main>
 <script>
-  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // без параметра остаётся общее слово.
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно показывается под заголовком
+  // и подставляется в текст; без параметра остаётся общее «служба такси».
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
+      name = name.trim();
+    }
+    if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+      document.querySelectorAll('.company-line').forEach(function (el) { el.hidden = false; });
+      document.querySelectorAll('.name-after').forEach(function (el) { el.textContent = ' «' + name + '»'; });
+      document.querySelectorAll('.name-before').forEach(function (el) { el.textContent = '«' + name + '» '; });
     }
   })();
 </script>
