@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haydovchilar uchun maxfiylik siyosati</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Til">
+<a href="driver-privacy-policy-uz.html" class="on">O'zbekcha</a>
+<a href="driver-privacy-policy-qr.html">Qaraqalpaqsha</a>
+<a href="driver-privacy-policy-ru.html">Русский</a>
+<a href="driver-privacy-policy-en.html">English</a>
+</nav>
+<h1>Haydovchilar uchun maxfiylik siyosati</h1>
+<p class="meta"><span class="company">Taksi xizmati</span></p>
+<p class="meta">2026-yil 25-noyabrdagi tahrir</p>
+<span class="test">Hujjatning sinov versiyasi</span>
+<h2>1. Qanday ma&#x27;lumotlarni olamiz</h2>
+<p>F.I.Sh., telefon raqami, chaqiruv belgisi, haydovchilik hujjatlari ma&#x27;lumotlari, avtomobil ma&#x27;lumotlari (model, rang, davlat raqami), ish vaqtidagi joylashuv, buyurtmalar tarixi, to&#x27;lovlar, reyting va qurilma haqidagi ma&#x27;lumotlar.</p>
+<h2>2. Ular nima uchun kerak</h2>
+<p>Buyurtmalarni taqsimlash, mijozga mashina va haydovchini ko&#x27;rsatish, hisob-kitoblarni yuritish, xavfsizlikni ta&#x27;minlash va <span class="company">Taksi xizmati</span> Xizmati ishini yaxshilash uchun.</p>
+<h2>3. Joylashuv</h2>
+<p>Haydovchi liniyada bo&#x27;lgan vaqtda ilova uning joylashuvini, jumladan ilova yig&#x27;ilgan bo&#x27;lsa ham, yuboradi — bu buyurtmalarni taqsimlash va mijozga mashinani ko&#x27;rsatish uchun kerak. Liniyadan tashqarida joylashuv yig&#x27;ilmaydi.</p>
+<h2>4. Ularni kimga beramiz</h2>
+<p>Buyurtma davomida mijozga — ism, avtomobil ma&#x27;lumotlari, aloqa uchun raqam va mashina joylashuvi. Xizmat dispetcherlariga. Davlat organlariga — faqat qonunda nazarda tutilgan hollarda. Ma&#x27;lumotlarni uchinchi shaxslarga sotmaymiz.</p>
+<h2>5. Saqlash va himoya</h2>
+<p>Ma&#x27;lumotlar Xizmat serverlarida haydovchi Xizmat bilan ishlayotgan vaqtda va qonunda belgilangan muddatlarda saqlanadi. Ularga kirish cheklangan va himoyalangan.</p>
+<h2>6. Sizning huquqlaringiz</h2>
+<p>Dispetcherlik xizmatiga murojaat qilib, siz haqingizda qanday ma&#x27;lumotlar saqlanayotganini bilishingiz, ularni tuzatishingiz yoki Xizmat bilan ishlashni to&#x27;xtatishingiz mumkin.</p>
+<h2>7. O&#x27;zgarishlar</h2>
+<p>Siyosatning yangi tahriri shu havolada e&#x27;lon qilinadi. Ilovada ishlashni davom ettirish unga roziligingizni bildiradi.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Публичная оферта для клиентов</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Язык">
+<a href="client-public-offer-uz.html">O'zbekcha</a>
+<a href="client-public-offer-qr.html">Qaraqalpaqsha</a>
+<a href="client-public-offer-ru.html" class="on">Русский</a>
+<a href="client-public-offer-en.html">English</a>
+</nav>
+<h1>Публичная оферта для клиентов</h1>
+<p class="meta"><span class="company">Служба такси</span></p>
+<p class="meta">Редакция от 25 ноября 2026 года</p>
+<span class="test">Тестовая версия документа</span>
+<h2>1. Общие положения</h2>
+<p>Настоящая публичная оферта — предложение службы <span class="company">Служба такси</span> (далее — Сервис) заключить договор об использовании мобильного приложения для заказа такси.</p>
+<p>Установка приложения, вход по номеру телефона и оформление заказа означают полное и безоговорочное принятие этих условий.</p>
+<h2>2. Предмет договора</h2>
+<p>Сервис принимает заказ клиента, передаёт его водителю-партнёру и сообщает клиенту данные машины и водителя. Перевозку выполняет водитель.</p>
+<h2>3. Заказ и отмена</h2>
+<p>Клиент указывает адрес подачи, тариф и при необходимости дополнительные услуги. Заказ можно отменить до прибытия машины.</p>
+<p>При частых отменах Сервис может временно ограничить приём заказов от клиента.</p>
+<h2>4. Стоимость и оплата</h2>
+<p>Стоимость поездки рассчитывается по тарифам, указанным в приложении. Итоговую сумму показывает таксометр по окончании поездки.</p>
+<p>Оплата производится водителю наличными или бонусами, если это разрешено правилами Сервиса.</p>
+<h2>5. Бонусы</h2>
+<p>Бонусы начисляются и списываются по правилам Сервиса. Бонусы не обмениваются на деньги и не передаются другим лицам.</p>
+<h2>6. Обязанности клиента</h2>
+<p>Указывать верные данные и адрес, бережно относиться к автомобилю, соблюдать правила поведения в машине и пристёгиваться ремнём безопасности.</p>
+<h2>7. Оценка водителя</h2>
+<p>После поездки клиент может оценить водителя звёздами. Оценка учитывается в рейтинге водителя.</p>
+<h2>8. Ответственность</h2>
+<p>Сервис не отвечает за задержки из-за дорожной обстановки, погоды, сбоев связи и других обстоятельств, на которые он не может повлиять.</p>
+<h2>9. Изменение условий и контакты</h2>
+<p>Сервис может изменять эти условия; новая редакция публикуется по этой же ссылке. Продолжение использования приложения означает согласие с ней.</p>
+<p>Вопросы и жалобы принимаются через службу поддержки в меню приложения.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

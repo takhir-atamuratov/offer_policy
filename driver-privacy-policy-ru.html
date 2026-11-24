@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности для водителей</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Язык">
+<a href="driver-privacy-policy-uz.html">O'zbekcha</a>
+<a href="driver-privacy-policy-qr.html">Qaraqalpaqsha</a>
+<a href="driver-privacy-policy-ru.html" class="on">Русский</a>
+<a href="driver-privacy-policy-en.html">English</a>
+</nav>
+<h1>Политика конфиденциальности для водителей</h1>
+<p class="meta"><span class="company">Служба такси</span></p>
+<p class="meta">Редакция от 25 ноября 2026 года</p>
+<span class="test">Тестовая версия документа</span>
+<h2>1. Какие данные мы получаем</h2>
+<p>ФИО, номер телефона, позывной, данные водительских документов, данные автомобиля (модель, цвет, гос. номер), местоположение во время работы, историю заказов, платежи, рейтинг и сведения об устройстве.</p>
+<h2>2. Зачем они нужны</h2>
+<p>Чтобы распределять заказы, показывать клиенту машину и водителя, вести расчёты, обеспечивать безопасность и улучшать работу Сервиса <span class="company">Служба такси</span>.</p>
+<h2>3. Местоположение</h2>
+<p>Пока водитель на линии, приложение передаёт его местоположение, в том числе когда приложение свёрнуто, — это нужно для распределения заказов и показа машины клиенту. Вне линии местоположение не собирается.</p>
+<h2>4. Кому мы их передаём</h2>
+<p>Клиенту на время заказа — имя, данные автомобиля, номер для связи и местоположение машины. Диспетчерам Сервиса. Государственным органам — только в случаях, предусмотренных законом. Мы не продаём данные третьим лицам.</p>
+<h2>5. Хранение и защита</h2>
+<p>Данные хранятся на серверах Сервиса, пока водитель работает с Сервисом, и в течение сроков, установленных законом. Доступ к ним ограничен и защищён.</p>
+<h2>6. Ваши права</h2>
+<p>Вы можете узнать, какие данные о вас хранятся, исправить их или прекратить работу с Сервисом, обратившись в диспетчерскую службу.</p>
+<h2>7. Изменения</h2>
+<p>Новая редакция политики публикуется по этой же ссылке. Продолжение работы в приложении означает согласие с ней.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

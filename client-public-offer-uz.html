@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mijozlar uchun ommaviy oferta</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Til">
+<a href="client-public-offer-uz.html" class="on">O'zbekcha</a>
+<a href="client-public-offer-qr.html">Qaraqalpaqsha</a>
+<a href="client-public-offer-ru.html">Русский</a>
+<a href="client-public-offer-en.html">English</a>
+</nav>
+<h1>Mijozlar uchun ommaviy oferta</h1>
+<p class="meta"><span class="company">Taksi xizmati</span></p>
+<p class="meta">2026-yil 25-noyabrdagi tahrir</p>
+<span class="test">Hujjatning sinov versiyasi</span>
+<h2>1. Umumiy qoidalar</h2>
+<p>Ushbu ommaviy oferta — <span class="company">Taksi xizmati</span> xizmatining (keyingi o&#x27;rinlarda — Xizmat) taksi chaqirish uchun mobil ilovadan foydalanish shartnomasini tuzish haqidagi taklifi.</p>
+<p>Ilovani o&#x27;rnatish, telefon raqami orqali kirish va buyurtma berish ushbu shartlarni to&#x27;liq va so&#x27;zsiz qabul qilishni anglatadi.</p>
+<h2>2. Shartnoma predmeti</h2>
+<p>Xizmat mijozning buyurtmasini qabul qiladi, uni hamkor haydovchiga yetkazadi va mijozga mashina hamda haydovchi ma&#x27;lumotlarini bildiradi. Tashishni haydovchi bajaradi.</p>
+<h2>3. Buyurtma va bekor qilish</h2>
+<p>Mijoz kutib olish manzilini, tarifni va kerak bo&#x27;lsa qo&#x27;shimcha xizmatlarni ko&#x27;rsatadi. Buyurtmani mashina yetib kelguncha bekor qilish mumkin.</p>
+<p>Tez-tez bekor qilinganda Xizmat mijozdan buyurtma qabul qilishni vaqtincha cheklashi mumkin.</p>
+<h2>4. Narx va to&#x27;lov</h2>
+<p>Safar narxi ilovada ko&#x27;rsatilgan tariflar bo&#x27;yicha hisoblanadi. Yakuniy summani safar oxirida taksometr ko&#x27;rsatadi.</p>
+<p>To&#x27;lov haydovchiga naqd pulda yoki, Xizmat qoidalari ruxsat bersa, bonuslar bilan amalga oshiriladi.</p>
+<h2>5. Bonuslar</h2>
+<p>Bonuslar Xizmat qoidalari bo&#x27;yicha hisoblanadi va yechiladi. Bonuslar pulga almashtirilmaydi va boshqa shaxslarga berilmaydi.</p>
+<h2>6. Mijozning majburiyatlari</h2>
+<p>To&#x27;g&#x27;ri ma&#x27;lumot va manzil ko&#x27;rsatish, avtomobilga ehtiyotkorlik bilan munosabatda bo&#x27;lish, mashinada odob qoidalariga rioya qilish va xavfsizlik kamarini taqish.</p>
+<h2>7. Haydovchini baholash</h2>
+<p>Safardan keyin mijoz haydovchini yulduzchalar bilan baholashi mumkin. Baho haydovchi reytingida hisobga olinadi.</p>
+<h2>8. Javobgarlik</h2>
+<p>Xizmat yo&#x27;l holati, ob-havo, aloqa uzilishi va u ta&#x27;sir qila olmaydigan boshqa holatlar tufayli kechikishlar uchun javob bermaydi.</p>
+<h2>9. Shartlarning o&#x27;zgarishi va aloqa</h2>
+<p>Xizmat ushbu shartlarni o&#x27;zgartirishi mumkin; yangi tahrir shu havolada e&#x27;lon qilinadi. Ilovadan foydalanishni davom ettirish unga roziligingizni bildiradi.</p>
+<p>Savol va shikoyatlar ilova menyusidagi qo&#x27;llab-quvvatlash xizmati orqali qabul qilinadi.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

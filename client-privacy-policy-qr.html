@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="kaa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klientler ushın qupıyalılıq siyasatı</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Til">
+<a href="client-privacy-policy-uz.html">O'zbekcha</a>
+<a href="client-privacy-policy-qr.html" class="on">Qaraqalpaqsha</a>
+<a href="client-privacy-policy-ru.html">Русский</a>
+<a href="client-privacy-policy-en.html">English</a>
+</nav>
+<h1>Klientler ushın qupıyalılıq siyasatı</h1>
+<p class="meta"><span class="company">Taksi xızmeti</span></p>
+<p class="meta">2026-jıl 25-noyabrdegi redakciya</p>
+<span class="test">Hújjettiń sınaq versiyası</span>
+<h2>1. Qanday maǵlıwmatlardı alamız</h2>
+<p>Telefon nomeri, at, jaylasıw orını (qosımsha ashıq turǵanda), mánziller hám buyırtpalar tariyxı, aydawshılarǵa qoyılǵan bahalar hám de qurılma haqqındaǵı maǵlıwmatlar: model hám qosımsha versiyası.</p>
+<h2>2. Olar ne ushın kerek</h2>
+<p>Buyırtpanı qabıl etiw hám orınlaw, jaqın átiraptaǵı mashinalardı kórsetiw, klientti aydawshı menen baylanıstırıw, bonuslardı esaplaw, qáwipsizlikti támiyinlew hám <span class="company">Taksi xızmeti</span> Xızmetiniń jumısın jaqsılaw ushın.</p>
+<h2>3. Olardı kimge beremiz</h2>
+<p>Buyırtpa dawamında aydawshıǵa — at, baylanıs ushın telefon nomeri hám kútip alıw mánzili. Mámleketlik organlarǵa — tek nızamda názerde tutılǵan jaǵdaylarda. Maǵlıwmatlardı úshinshi tárepke satpaymız.</p>
+<h2>4. Jaylasıw orını</h2>
+<p>Jaylasıw orını tek qosımsha ashıq turǵanda paydalanıladı: kútip alıw mánzili hám jaqın mashinalardı kórsetiw ushın. Ruqsattı telefon sazlamalarında óshiriw múmkin.</p>
+<h2>5. Saqlaw hám qorǵaw</h2>
+<p>Maǵlıwmatlar Xızmet serverlerinde akkaunt aktiv bolǵan waqıtta hám nızamda belgilengen múddetlerde saqlanadı. Olarǵa kiriw sheklengen hám qorǵalǵan.</p>
+<h2>6. Sizdiń huqıqlarıńız</h2>
+<p>Qosımsha menyusindegi qollap-quwatlaw xızmetine múrájat etip, siz haqqıńızda qanday maǵlıwmatlar saqlanıp atırǵanın biliwińiz, olardı dúzetiwińiz yamasa akkaunttı óshiriwińiz múmkin.</p>
+<h2>7. Ózgerisler</h2>
+<p>Siyasattıń jańa redakciyası usı siltemede járiyalanadı. Qosımshadan paydalanıwdı dawam etiw oǵan razılıǵıńızdı bildiredi.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

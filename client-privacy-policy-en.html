@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy for clients</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Language">
+<a href="client-privacy-policy-uz.html">O'zbekcha</a>
+<a href="client-privacy-policy-qr.html">Qaraqalpaqsha</a>
+<a href="client-privacy-policy-ru.html">Русский</a>
+<a href="client-privacy-policy-en.html" class="on">English</a>
+</nav>
+<h1>Privacy policy for clients</h1>
+<p class="meta"><span class="company">The taxi service</span></p>
+<p class="meta">Version of 25 November 2026</p>
+<span class="test">Test version of the document</span>
+<h2>1. What data we collect</h2>
+<p>Phone number, name, location (while the app is open), addresses and order history, ratings given to drivers, and device details: model and app version.</p>
+<h2>2. Why we need it</h2>
+<p>To accept and complete orders, show nearby cars, connect the client with the driver, award bonuses, keep rides safe and improve the work of <span class="company">The taxi service</span>.</p>
+<h2>3. Who we share it with</h2>
+<p>With the driver during the order: name, phone number for contact and pickup address. With public authorities only where the law requires it. We do not sell data to third parties.</p>
+<h2>4. Location</h2>
+<p>Location is used only while the app is open: for the pickup address and to show nearby cars. You can turn access off in the phone settings.</p>
+<h2>5. Storage and protection</h2>
+<p>Data is stored on the Service&#x27;s servers while the account is active and for the periods set by law. Access to it is restricted and protected.</p>
+<h2>6. Your rights</h2>
+<p>You can find out what data we keep about you, correct it or delete your account by contacting support in the app menu.</p>
+<h2>7. Changes</h2>
+<p>A new version of this policy is published at this same link. Continuing to use the app means you accept it.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

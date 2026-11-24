@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="kaa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klientler ushın ashıq oferta</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Til">
+<a href="client-public-offer-uz.html">O'zbekcha</a>
+<a href="client-public-offer-qr.html" class="on">Qaraqalpaqsha</a>
+<a href="client-public-offer-ru.html">Русский</a>
+<a href="client-public-offer-en.html">English</a>
+</nav>
+<h1>Klientler ushın ashıq oferta</h1>
+<p class="meta"><span class="company">Taksi xızmeti</span></p>
+<p class="meta">2026-jıl 25-noyabrdegi redakciya</p>
+<span class="test">Hújjettiń sınaq versiyası</span>
+<h2>1. Ulıwma qaǵıydalar</h2>
+<p>Bul ashıq oferta — <span class="company">Taksi xızmeti</span> xızmetiniń (bunnan bılay — Xızmet) taksi shaqırıw ushın mobil qosımshadan paydalanıw shártnamasın dúziw haqqındaǵı usınısı.</p>
+<p>Qosımshanı ornatıw, telefon nomeri arqalı kiriw hám buyırtpa beriw usı shártlerdi tolıq hám shártsiz qabıl etiwdi ańlatadı.</p>
+<h2>2. Shártnama predmeti</h2>
+<p>Xızmet klienttiń buyırtpasın qabıl etedi, onı sherik aydawshıǵa jetkeredi hám klientke mashina menen aydawshı maǵlıwmatların xabarlaydı. Tasıwdı aydawshı orınlaydı.</p>
+<h2>3. Buyırtpa hám biykar etiw</h2>
+<p>Klient kútip alıw mánzilin, tarifti hám kerek bolsa qosımsha xızmetlerdi kórsetedi. Buyırtpanı mashina kelgenge shekem biykar etiw múmkin.</p>
+<p>Jiyi biykar etilgende Xızmet klientten buyırtpa qabıl etiwdi waqıtsha sheklewi múmkin.</p>
+<h2>4. Bahası hám tólem</h2>
+<p>Sapar bahası qosımshada kórsetilgen tarifler boyınsha esaplanadı. Juwmaqlawshı summanı sapar aqırında taksometr kórsetedi.</p>
+<p>Tólem aydawshıǵa naq pul menen yamasa, Xızmet qaǵıydaları ruqsat etse, bonuslar menen ámelge asırıladı.</p>
+<h2>5. Bonuslar</h2>
+<p>Bonuslar Xızmet qaǵıydaları boyınsha esaplanadı hám alınadı. Bonuslar pulǵa almastırılmaydı hám basqa adamlarǵa berilmeydi.</p>
+<h2>6. Klienttiń minnetlemeleri</h2>
+<p>Durıs maǵlıwmat hám mánzil kórsetiw, avtomobilge abaylap qatnas jasaw, mashinada ádep qaǵıydalarına ámel etiw hám qáwipsizlik kamarın taǵıw.</p>
+<h2>7. Aydawshını bahalaw</h2>
+<p>Sapardan keyin klient aydawshını juldızshalar menen bahalawı múmkin. Baha aydawshınıń reytinginde esapqa alınadı.</p>
+<h2>8. Juwapkershilik</h2>
+<p>Xızmet jol jaǵdayı, hawa rayı, baylanıs úziliwi hám ol tásir ete almaytuǵın basqa jaǵdaylar sebepli keshigiwler ushın juwap bermeydi.</p>
+<h2>9. Shártlerdiń ózgeriwi hám baylanıs</h2>
+<p>Xızmet usı shártlerdi ózgertiwi múmkin; jańa redakciya usı siltemede járiyalanadı. Qosımshadan paydalanıwdı dawam etiw oǵan razılıǵıńızdı bildiredi.</p>
+<p>Sorawlar hám shaǵımlar qosımsha menyusindegi qollap-quwatlaw xızmeti arqalı qabıl etiledi.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public offer for drivers</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #6b6b70; --line: #e4e4e7; --accent: #b8860b; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1c1c1e; --text: #f2f2f7; --muted: #a1a1a6; --line: #38383a; --accent: #f5c400; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
+          color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
+  .test { display: inline-block; margin: 8px 0 18px; padding: 3px 10px; border-radius: 6px;
+           background: rgba(184, 134, 11, .12); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 18px; margin: 24px 0 8px; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Language">
+<a href="driver-public-offer-uz.html">O'zbekcha</a>
+<a href="driver-public-offer-qr.html">Qaraqalpaqsha</a>
+<a href="driver-public-offer-ru.html">Русский</a>
+<a href="driver-public-offer-en.html" class="on">English</a>
+</nav>
+<h1>Public offer for drivers</h1>
+<p class="meta"><span class="company">The taxi service</span></p>
+<p class="meta">Version of 25 November 2026</p>
+<span class="test">Test version of the document</span>
+<h2>1. General provisions</h2>
+<p>This public offer is a proposal by <span class="company">The taxi service</span> (the Service) to a partner driver to use the driver app to receive orders.</p>
+<p>Registering in the app and going on duty mean full and unconditional acceptance of these terms.</p>
+<h2>2. Subject of the agreement</h2>
+<p>The Service gives the driver access to clients&#x27; orders. The driver performs the rides personally and is responsible for the car, documents and permits.</p>
+<h2>3. Driver requirements</h2>
+<p>A valid driving licence, a sound and clean car that matches the chosen fare class, and polite treatment of clients.</p>
+<h2>4. Orders</h2>
+<p>Orders are distributed by queue, distance and rating. Accepting orders, arriving on time and cancellations affect the driver&#x27;s rating.</p>
+<h2>5. Payment for the Service&#x27;s services</h2>
+<p>The driver pays for the Service&#x27;s services at the current rates from the balance in the app. If the balance is too low, access to orders may be limited.</p>
+<h2>6. Rating</h2>
+<p>The rating is formed under the Service&#x27;s rules, including client ratings, and affects the order in which orders are received.</p>
+<h2>7. Liability and blocking</h2>
+<p>The driver is responsible for following traffic rules, passenger safety and damage caused through their fault. For violations the Service may temporarily or permanently close access to the app.</p>
+<h2>8. Changes and contacts</h2>
+<p>The Service may change these terms; the new version is published at this same link. Continuing to work in the app means you accept it.</p>
+<p>Questions are handled by the Service&#x27;s dispatch office.</p>
+</main>
+<script>
+  // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
+  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  (function () {
+    var q = location.search;
+    var name = new URLSearchParams(q).get('company');
+    if (name) {
+      document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
+    }
+    if (q) {
+      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
+    }
+  })();
+</script>
+</body>
+</html>
