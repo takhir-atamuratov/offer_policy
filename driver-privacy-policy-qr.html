@@ -12,11 +12,7 @@
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--text);
          font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
-  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-  nav a { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px;
-          color: var(--muted); text-decoration: none; font-size: 14px; }
-  nav a.on { color: var(--text); border-color: var(--accent); font-weight: 600; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
   h1 { font-size: 24px; line-height: 1.25; margin: 0 0 6px; }
   .meta { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
   h2 { font-size: 18px; margin: 24px 0 8px; }
@@ -25,12 +21,6 @@
 </head>
 <body>
 <main>
-<nav aria-label="Til">
-<a href="driver-privacy-policy-uz.html">O'zbekcha</a>
-<a href="driver-privacy-policy-qr.html" class="on">Qaraqalpaqsha</a>
-<a href="driver-privacy-policy-ru.html">Русский</a>
-<a href="driver-privacy-policy-en.html">English</a>
-</nav>
 <h1>Aydawshılar ushın qupıyalılıq siyasatı</h1>
 <p class="meta"><span class="company">Taksi xızmeti</span></p>
 <p class="meta">2026-jıl 25-noyabrdegi redakciya</p>
@@ -52,15 +42,12 @@
 </main>
 <script>
   // Название службы: ссылка может нести ?company=Такси%201066 — тогда оно подставляется в текст,
-  // и переключатель языков его сохраняет. Без параметра остаётся общее слово.
+  // без параметра остаётся общее слово.
   (function () {
     var q = location.search;
     var name = new URLSearchParams(q).get('company');
     if (name) {
       document.querySelectorAll('.company').forEach(function (el) { el.textContent = name; });
-    }
-    if (q) {
-      document.querySelectorAll('nav a').forEach(function (a) { a.href = a.getAttribute('href') + q; });
     }
   })();
 </script>
